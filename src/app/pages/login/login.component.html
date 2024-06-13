@@ -1,18 +1,92 @@
-<section class="m-3">
-  <form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email o nombre de usuario</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">Mensaje demo.</div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Contrase&ntilde;a</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-      <label class="form-check-label" for="flexSwitchCheckChecked">Recuerdame</label>
-    </div>
-    <button type="submit" class="btn btn-primary">INICIAR SESI&Oacute;N</button>
-  </form>
-</section>
+<!--<section class="m-2">-->
+<!--  El form es  valido {{formLogin.valid}}-->
+<!--  <br>-->
+<!--  los valores son {{formLogin.value | json}}-->
+<!--  <br>-->
+
+<!--</section>-->
+<div class="container">
+  <div class="row">
+    <article class="col-6">
+      <img src="/assets/img/loing-img-1.png" class="img-fluid" alt="...">
+    </article>
+    <article class="col-6">
+      <div class="container">
+        <section class="login-title">
+          <h1>Inicia sesión</h1>
+        </section>
+        <section class="m-3">
+          <form [formGroup]="formLogin" (ngSubmit)="login()">
+            <div class="mb-3">
+              <label for="inputUser" class="form-label">Email o nombre de usuario</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email o nombre de usuario"
+                id="inputUser"
+                formControlName="user"
+                [ngClass]="{ 'is-invalid': fl['user'].errors && submited}"
+                aria-describedby="userHelp" >
+              <div class="invalid-feedback">
+                El email o nombre de usuario es obligatorio.
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <label for="inputUser" class="form-label">Contrase&ntilde;a</label>
+              <input
+                [type]="showPassw ? 'text' : 'password'"
+                class="form-control"
+                formControlName="pssw"
+                placeholder="Contrase&ntilde;a"
+                [ngClass]="{ 'is-invalid': fl['pssw'].errors && submited}"
+                aria-describedby="psswEye">
+              <div class="input-group-append" (click)="changeShowPssw()">
+        <span class="input-group-text" id="psswEye">
+          <fa-icon [icon]="showPassw ? faEye : faEyeTSlash"></fa-icon>
+        </span>
+              </div>
+              <div class="invalid-feedback">
+                La contrase&ntilde;a es obligatoria.
+              </div>
+            </div>
+
+            <div class="form-check form-switch">
+              <input class="form-check-input"
+                     type="checkbox"
+                     formControlName="remember"
+                     role="switch"
+                     id="checkRecuerdame">
+              <label class="form-check-label" for="checkRecuerdame">Recuerdame</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">INICIAR SESI&Oacute;N</button>
+            <div>
+              <a>¿Olvidaste tu contrase&ntilde;a?</a>
+            </div>
+
+            <p>
+              ¿No tienes una cuenta?
+              <button type="button" class="btn btn-secondary">REGISTRARSE</button>
+            </p>
+
+            <div>
+              Inicia sesión con tus redes sociales
+              <div>
+                <button type="button" class="btn btn-secondary">
+                  <fa-icon [icon]="faGoogle"></fa-icon>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <fa-icon [icon]="faFacebook"></fa-icon>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <fa-icon [icon]="faApple"></fa-icon>
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </article>
+  </div>
+</div>
