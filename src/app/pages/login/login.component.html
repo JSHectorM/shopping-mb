@@ -7,13 +7,23 @@
 <!--</section>-->
 <div class="container">
   <div class="row">
-    <article class="col-6">
-      <img src="/assets/img/loing-img-1.png" class="img-fluid" alt="...">
-    </article>
-    <article class="col-6">
+<!--    <article class="col-6 d-none">-->
+<!--      <img src="/assets/img/loing-img-1.png" class="img-fluid" alt="...">-->
+<!--    </article>-->
+    <article class="col-sm-6 col-md-12">
       <div class="container">
-        <section class="login-title">
-          <h1>Inicia sesión</h1>
+        <section class="my-4">
+          <ul class="nav">
+            <li class="nav-item">
+              <button type="button" class="btn btn-light">
+                <fa-icon style="font-size:20px;" [icon]="faArrowLeft"></fa-icon>
+              </button>
+            </li>
+            <li>
+              <h1 class="login-title">Inicia sesión</h1>
+            </li>
+          </ul>
+
         </section>
         <section class="m-3">
           <form [formGroup]="formLogin" (ngSubmit)="login()">

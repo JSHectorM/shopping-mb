@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {faEye, faEyeSlash} from "@fortawesome/free-regular-svg-icons";
 import {faGoogle, faFacebook, faApple} from "@fortawesome/free-brands-svg-icons";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit{
   faGoogle = faGoogle;
   faFacebook =  faFacebook;
   faApple =  faApple;
+  faArrowLeft = faArrowLeft;
 
   // flag show pssw
   showPassw = false;
