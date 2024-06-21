@@ -7,4 +7,21 @@
   --bs-body-font-family: "Inter", sans-serif !important;
 }
 
+.container {
+  max-width: 1140px;
+}
+@media (max-width: 1140px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+.form-control::placeholder {
+  font-size: 1rem;
+}
+
+.form-control-lg::placeholder {
+  font-size: 1rem;
+}
+
 @import 'node_modules/bootstrap/scss/bootstrap';
