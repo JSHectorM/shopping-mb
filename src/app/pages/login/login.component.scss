@@ -1,4 +1,87 @@
-.login-title{
-  font-size: 24px;
-  font-weight: normal;
+
+.login-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  font-size: 1.75rem;
+}
+
+.back-button {
+  margin-right: 10px;
+}
+
+.toggle-password {
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.register-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+.social-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.btn-show-pssw{
+  //--bs-btn-color: #6c757d;
+  //--bs-btn-border-color: #6c757d;
+  //--bs-btn-hover-color: #fff;
+  //--bs-btn-hover-bg: #6c757d;
+  //--bs-btn-hover-border-color: #6c757d;
+  //--bs-btn-focus-shadow-rgb: 108,117,125;
+  //--bs-btn-active-color: #fff;
+  //--bs-btn-active-bg: #6c757d;
+  //--bs-btn-active-border-color: #6c757d;
+  //--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  //--bs-btn-disabled-color: #6c757d;
+  //--bs-btn-disabled-bg: transparent;
+  //--bs-btn-disabled-border-color: #6c757d;
+  //--bs-gradient: none;
+}
+
+
+@media (max-width: 390px) {
+  .login-title {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+  }
+
+  .social-button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .mb-80px{
+    margin-bottom: 80px;
+  }
+  .container{
+    //padding: 0;
+    padding-right: 4px;
+    padding-left: 4px;
+  }
 }

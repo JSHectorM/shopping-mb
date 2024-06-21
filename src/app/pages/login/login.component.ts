@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit{
 
   // Icons
   faEye = faEye;
-  faEyeTSlash = faEyeSlash;
+  faEyeSlash = faEyeSlash;
   faGoogle = faGoogle;
   faFacebook =  faFacebook;
   faApple =  faApple;
