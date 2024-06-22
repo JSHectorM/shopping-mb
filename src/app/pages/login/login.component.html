@@ -1,10 +1,9 @@
-<!-- login.component.html -->
-<div class="container">
+<div class="container align-items-center">
   <div class="row">
     <div class="col-12 col-lg-6 d-none d-lg-block">
       <img src="/assets/img/loing-img-1.png" class="img-fluid" alt="...">
     </div>
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-6 container-form-login mx-auto">
       <div class="container">
         <section class="mt-5 mb-80px">
           <h2 class="login-title">
@@ -14,9 +13,9 @@
             Inicia sesión
           </h2>
         </section>
-        <section class="m-3">
+        <section class="">
           <form [formGroup]="formLogin" (ngSubmit)="login()">
-            <div class="mb-3 input-group-lg">
+            <div class="mb-32px input-group-lg">
               <label for="inputUser" class="form-label">Email o nombre de usuario</label>
               <input
                 type="text"
@@ -30,7 +29,7 @@
                 El email o nombre de usuario es obligatorio.
               </div>
             </div>
-            <div class="mb-3 input-group-lg">
+            <div class="mb-4 input-group-lg">
               <label for="inputPassword" class="form-label">Contraseña</label>
               <div class="input-group">
                 <input
@@ -49,29 +48,29 @@
                 </div>
               </div>
             </div>
-            <div class="form-check form-switch mb-3">
+            <div class="form-check form-switch custom-switch-color mb-32px">
               <input class="form-check-input" type="checkbox" formControlName="remember" id="checkRecuerdame">
               <label class="form-check-label" for="checkRecuerdame">Recuérdame</label>
             </div>
-            <button type="submit" class="btn btn-primary w-100">INICIAR SESIÓN</button>
-            <div class="mt-3 text-center">
-              <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            <button type="submit" class="btn btn-yellow custom-btn-log w-100">INICIAR SESIÓN</button>
+            <div class="mt-2 mb-76px">
+              <a href="#" class="forgot-password text-fill">¿Olvidaste tu contraseña?</a>
             </div>
-            <div class="mt-3">
+            <div class="text-fill mb-32px">
               <p>¿No tienes una cuenta?
-                <button type="button" class="btn btn-link">REGISTRARSE</button>
+                <button type="button" class="ms-3 btn btn-dark custom-dark-btn">REGISTRARSE</button>
               </p>
             </div>
-            <div class="mt-3">
+            <div class="mt-3 social-media">
               <p>Inicia sesión con tus redes sociales</p>
               <div class="d-flex justify-content-between">
-                <button type="button" class="btn btn-outline-secondary">
+                <button type="button" class="btn btn-outline-secondary social-button google">
                   <fa-icon [icon]="faGoogle"></fa-icon>
                 </button>
-                <button type="button" class="btn btn-outline-secondary">
+                <button type="button" class="btn btn-outline-secondary social-button facebook">
                   <fa-icon [icon]="faFacebook"></fa-icon>
                 </button>
-                <button type="button" class="btn btn-outline-secondary">
+                <button type="button" class="btn btn-outline-secondary social-button apple">
                   <fa-icon [icon]="faApple"></fa-icon>
                 </button>
               </div>

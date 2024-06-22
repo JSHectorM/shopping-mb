@@ -1,3 +1,12 @@
+.container-form-login{
+  max-width: 482px;
+}
+//btn iniciar sesion
+.custom-btn-log{
+  font-size: 1.3rem;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
 
 .login-container {
   background: #fff;
@@ -17,71 +26,69 @@
 .toggle-password {
   cursor: pointer;
 }
-
+.text-fill{
+  font-size: 0.8rem;
+  color: #000000;
+  fill: #cccccc;
+}
 .forgot-password {
-  color: #007bff;
   text-decoration: none;
 }
-
 .forgot-password:hover {
   text-decoration: underline;
 }
-
-.register-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.register-link:hover {
-  text-decoration: underline;
-}
-
-.social-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
 .btn-show-pssw{
-  //--bs-btn-color: #6c757d;
-  //--bs-btn-border-color: #6c757d;
-  //--bs-btn-hover-color: #fff;
-  //--bs-btn-hover-bg: #6c757d;
-  //--bs-btn-hover-border-color: #6c757d;
-  //--bs-btn-focus-shadow-rgb: 108,117,125;
-  //--bs-btn-active-color: #fff;
-  //--bs-btn-active-bg: #6c757d;
-  //--bs-btn-active-border-color: #6c757d;
-  //--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  //--bs-btn-disabled-color: #6c757d;
-  //--bs-btn-disabled-bg: transparent;
-  //--bs-btn-disabled-border-color: #6c757d;
-  //--bs-gradient: none;
+  border-right: 1px solid rgb(206, 212, 218);
+  border-top: 1px solid rgb(206, 212, 218);
+  border-bottom: 1px solid rgb(206, 212, 218);
+
+  border-bottom-right-radius: 8px !important;
+  border-top-right-radius: 8px !important;
 }
-
-
+.social-media{
+  .social-button {
+    width: 100px;
+    height: 47px;
+    font-size: 25px;
+  }
+  .facebook {
+    background-color:#1877F2;
+    color: #ffffff;
+  }
+  .apple{
+    background-color: #000000;
+    color: #ffffff;
+  }
+  .google{
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+  }
+}
+.custom-dark-btn {
+  font-size: 0.875rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 @media (max-width: 390px) {
   .login-title {
     font-size: 1.5rem;
   }
-
-  .btn {
-    font-size: 0.875rem;
-  }
-
-  .social-button {
-    width: 40px;
-    height: 40px;
-  }
 }
-
 
 @media (max-width: 992px) {
   .mb-80px{
     margin-bottom: 80px;
   }
-  .container{
-    //padding: 0;
-    padding-right: 4px;
-    padding-left: 4px;
+  .mb-32px {
+    margin-bottom: 32px;
+  }
+  .mb-76px {
+    margin-bottom: 76px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .mt-109px{
+    margin-top: 109px;
   }
 }
