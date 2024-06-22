@@ -1,11 +1,11 @@
-<div class="container align-items-center">
-  <div class="row">
-    <div class="col-12 col-lg-6 d-none d-lg-block">
+<div class="container h-100 d-flex align-items-center justify-content-center">
+  <div class="row w-100">
+    <div class="col-12 col-lg-6 d-none d-lg-flex align-items-center justify-content-center">
       <img src="/assets/img/loing-img-1.png" class="img-fluid" alt="...">
     </div>
-    <div class="col-12 col-lg-6 container-form-login mx-auto">
-      <div class="container">
-        <section class="mt-5 mb-80px">
+    <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
+      <div class="container-fluid container-form-login">
+        <section class="mt-5 mt-lg-0 mb-lg-4 mb-80px text-sm-center text-lg-start">
           <h2 class="login-title">
             <button type="button" class="btn btn-light d-lg-none">
               <fa-icon style="font-size:20px;" [icon]="faArrowLeft"></fa-icon>
@@ -13,9 +13,9 @@
             Inicia sesión
           </h2>
         </section>
-        <section class="">
+        <section class="mb-lg-4">
           <form [formGroup]="formLogin" (ngSubmit)="login()">
-            <div class="mb-32px input-group-lg">
+            <div class="mb-32px mb-lg-4 input-group-lg">
               <label for="inputUser" class="form-label">Email o nombre de usuario</label>
               <input
                 type="text"
@@ -48,15 +48,15 @@
                 </div>
               </div>
             </div>
-            <div class="form-check form-switch custom-switch-color mb-32px">
+            <div class="form-check form-switch custom-switch-color mb-32px mb-lg-4">
               <input class="form-check-input" type="checkbox" formControlName="remember" id="checkRecuerdame">
               <label class="form-check-label" for="checkRecuerdame">Recuérdame</label>
             </div>
             <button type="submit" class="btn btn-yellow custom-btn-log w-100">INICIAR SESIÓN</button>
-            <div class="mt-2 mb-76px">
+            <div class="mt-2 mb-76px mb-lg-5">
               <a href="#" class="forgot-password text-fill">¿Olvidaste tu contraseña?</a>
             </div>
-            <div class="text-fill mb-32px">
+            <div class="text-fill mb-32px mb-lg-4">
               <p>¿No tienes una cuenta?
                 <button type="button" class="ms-3 btn btn-dark custom-dark-btn">REGISTRARSE</button>
               </p>
