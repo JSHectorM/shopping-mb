@@ -3,6 +3,9 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/form
 import {faEye, faEyeSlash} from "@fortawesome/free-regular-svg-icons";
 import {faGoogle, faFacebook, faApple} from "@fortawesome/free-brands-svg-icons";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {AuthService} from "../../services/auth.service";
+import {RequestLogin, UserLoginModel} from "../../models/login-user.model";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -25,7 +28,8 @@ export class LoginComponent implements OnInit{
   submited = false;
 
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+              private auth: AuthService){}
 
   ngOnInit() {
     this.formLoginInit()
@@ -37,8 +41,8 @@ export class LoginComponent implements OnInit{
 
   formLoginInit(){
     this.formLogin = this.fb.group({
-      user: ['', [Validators.required]],
-      pssw: ['', [Validators.required]],
+      user: ['hector@mb.company', [Validators.required]],
+      pssw: ['123', [Validators.required]],
       remember : ['true',[]]
     })
   }
@@ -46,7 +50,22 @@ export class LoginComponent implements OnInit{
 
   login(){
     this.submited = true;
-    console.log(this.formLogin.value)
+    if ( this.formLogin.valid ){
+      const userLogin : UserLoginModel = {
+        username: this.formLogin.value.user,
+        password: this.formLogin.value.pssw
+      }
+      console.log(userLogin)
+      this.auth.login( userLogin ).subscribe({
+        error : ( err ) => {
+          console.error(err)
+        },
+        next : (data) => {
+          this.auth.setToken( data.token ?? "" )
+        }
+      });
+    }
+
   }
 
   changeShowPssw(){
