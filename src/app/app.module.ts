@@ -10,13 +10,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { SpinnerComponent } from './share/components/spinner/spinner.component';
 import {SpinnerInterceptorService} from "./services/spinner-interceptor.service";
+import { NavbarComponent } from './share/components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
