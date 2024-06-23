@@ -11,6 +11,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { SpinnerComponent } from './share/components/spinner/spinner.component';
 import {SpinnerInterceptorService} from "./services/spinner-interceptor.service";
 import { NavbarComponent } from './share/components/navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavbarComponent } from './share/components/navbar/navbar.component';
     LoginComponent,
     PageNotFoundComponent,
     SpinnerComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
