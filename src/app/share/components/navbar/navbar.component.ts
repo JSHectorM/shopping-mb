@@ -1,15 +1,31 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faBell,
+  faCartShopping,
+  faLocationDot,
+  faMagnifyingGlass
+} from "@fortawesome/free-solid-svg-icons";
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit{
+  // Icons
   faBars = faBars;
+  search = faMagnifyingGlass;
+  bell = faBell;
+  cartShopping = faCartShopping
+  location = faLocationDot;
+  // Flags
   isLoginPage: boolean = false;
   isMobile: boolean = false;
+  // articleas
+  numArticles: number = 0;
+  // CP
+  envioCP:number = 42010;
 
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
