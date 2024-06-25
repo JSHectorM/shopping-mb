@@ -47,3 +47,66 @@
   </nav>
 
 </div>
+
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-light bg-yelow my-2" [ngClass]="{'d-none': isMobile && isLoginPage,'navbar-expand-lg': !isLoginPage}">
+    <div class="container navMobile" *ngIf="isMobile">
+      <button [disabled]="isLoginPage" *ngIf="!isLoginPage && isMobile" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <fa-icon [icon]="faBars"></fa-icon>
+      </button>
+      <div class="input-group rounded inp-search">
+        <input type="search" class="form-control py-1 border-right-0 border" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+          <fa-icon [icon]="search"></fa-icon>
+        </span>
+      </div>
+      <div class="">
+        <a class="position-relative icon-navbar">
+          <fa-icon [icon]="bell"></fa-icon>
+          <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+          <span class="visually-hidden">New alerts</span>
+        </span>
+        </a>
+        <a class="position-relative icon-navbar">
+          <fa-icon [icon]="cartShopping"></fa-icon>
+          <span *ngIf="numArticles > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ numArticles }}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+        </a>
+      </div>
+
+      <a class="navbar-brand" routerLink="/home" *ngIf="!isMobile">
+        <img src="/assets/img/LOGO.png" alt="Logo" width="86">
+      </a>
+      <div class="collapse navbar-collapse" id="navbarMobile">
+        <div class="card card-body">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="!isLoginPage">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ofertas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tiendas oficiales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vender</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Marcas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-2" *ngIf="isMobile">
+      <button class="btn btn-cp">
+        <fa-icon [icon]="location"></fa-icon>
+        Env&iacute;ar a CP {{envioCP  }}
+      </button>
+    </div>
+  </nav>
+</div>
+
