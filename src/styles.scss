@@ -21,12 +21,16 @@ body{
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1440px;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1440px) {
   .container {
     padding: 0 15px;
   }
+}
+
+.bg-yelow {
+  background-color: #D8FF00;
 }
 .form-control::placeholder {
   font-size: 1rem;
