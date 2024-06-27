@@ -18,3 +18,23 @@ div, nav, a, img, form, button, ul, li {
     max-width: 230px;
   }
 }
+.navWeb {
+  .inp-search {
+    max-width: 590px;
+  }
+}
+
+.collapse-mobile {
+  .card {
+    background-color: #D8FF00;
+    border: none;
+    .nav-item a{
+      color: #000000;
+    }
+  }
+}
+
+.row-navbar{
+//  Aqui personalizar la segunda row del nav
+}
+

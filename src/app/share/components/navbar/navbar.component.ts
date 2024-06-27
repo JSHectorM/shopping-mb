@@ -19,6 +19,8 @@ export class NavbarComponent implements OnInit{
   bell = faBell;
   cartShopping = faCartShopping
   location = faLocationDot;
+  // IMG Logos
+  srcLogo = "/assets/img/LOGO.png"
   // Flags
   isLoginPage: boolean = false;
   isMobile: boolean = false;
@@ -26,6 +28,9 @@ export class NavbarComponent implements OnInit{
   numArticles: number = 0;
   // CP
   envioCP:number = 42010;
+
+  // Rutas
+  routeHome ="/home"
 
   constructor(private router: Router) {
     this.router.events.subscribe(event => {

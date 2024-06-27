@@ -1,57 +1,18 @@
-<div class="container">
-  <nav class="navbar navbar-light bg-light my-2" [ngClass]="{'d-none': isMobile && isLoginPage,'navbar-expand-lg': !isLoginPage}">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="/assets/img/LOGO.png" alt="Logo" width="86">
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-light py-2" [ngClass]="{'d-none': isMobile && isLoginPage,'navbar-expand-lg bg-yelow': !isLoginPage}">
+    <!--    NavBar para mobile ISLOGIN-->
+    <div class="container px-4" *ngIf="isLoginPage">
+      <a class="navbar-brand" routerLink="{{routeHome}}">
+        <img ngSrc="{{srcLogo}}" alt="Logo" width="86" height="22">
       </a>
-      <button [disabled]="isLoginPage" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button [disabled]="isLoginPage" class="navbar-toggler" type="button">
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="!isLoginPage">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ofertas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tiendas oficiales</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Vender</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Marcas</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Registra tu auto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ingresar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-shopping-cart"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
     </div>
-  </nav>
 
-</div>
-
-<div class="container-fluid p-0">
-  <nav class="navbar navbar-light bg-yelow my-2" [ngClass]="{'d-none': isMobile && isLoginPage,'navbar-expand-lg': !isLoginPage}">
-    <div class="container navMobile" *ngIf="isMobile">
-      <button [disabled]="isLoginPage" *ngIf="!isLoginPage && isMobile" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!--    NavBar para mobile !ISLOGIN-->
+    <div class="container navMobile" *ngIf="isMobile && !isLoginPage">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
       <div class="input-group rounded inp-search">
@@ -75,15 +36,19 @@
         </span>
         </a>
       </div>
-
-      <a class="navbar-brand" routerLink="/home" *ngIf="!isMobile">
-        <img src="/assets/img/LOGO.png" alt="Logo" width="86">
-      </a>
-      <div class="collapse navbar-collapse" id="navbarMobile">
+      <div class="collapse navbar-collapse collapse-mobile" id="navbarMobile">
         <div class="card card-body">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="!isLoginPage">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Categorías</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorías
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Ofertas</a>
@@ -107,6 +72,75 @@
         Env&iacute;ar a CP {{envioCP  }}
       </button>
     </div>
+
+    <!--    NavBar para WEB !ISLOGIN-->
+    <div class="container navWeb" *ngIf="!isMobile && !isLoginPage">
+      <a class="navbar-brand" routerLink="{{routeHome}}">
+        <img ngSrc="{{srcLogo}}" alt="Logo" width="86" height="22">
+      </a>
+      <div class="input-group rounded inp-search">
+        <input type="search" class="form-control py-1 border-right-0 border" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon-web" />
+        <span class="input-group-text border-0" id="search-addon-web">
+          <fa-icon [icon]="search"></fa-icon>
+        </span>
+      </div>
+      <button type="button">Registra tu auto</button>
+      <div class="">
+        <a class="position-relative icon-navbar">
+          <fa-icon [icon]="bell"></fa-icon>
+          <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+          <span class="visually-hidden">New alerts</span>
+        </span>
+        </a>
+        <a class="position-relative icon-navbar">
+          <fa-icon [icon]="cartShopping"></fa-icon>
+          <span *ngIf="numArticles > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ numArticles }}
+            <span class="visually-hidden">unread messages</span>
+        </span>
+        </a>
+      </div>
+    </div>
   </nav>
+  <!--    NavBar 2row  para WEB !ISLOGIN-->
+  <nav class="navbar navbar-expand-lg bg-yelow row-navbar" *ngIf="!isMobile && !isLoginPage">
+    <div class="container justify-content-around">
+      <div class="flex-column">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="!isLoginPage">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorías
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ofertas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tiendas oficiales</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Vender</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Marcas</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex-column">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="!isLoginPage">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ingresar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
 </div>
 
