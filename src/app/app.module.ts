@@ -12,6 +12,7 @@ import { SpinnerComponent } from './share/components/spinner/spinner.component';
 import {SpinnerInterceptorService} from "./services/spinner-interceptor.service";
 import { NavbarComponent } from './share/components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -22,13 +23,14 @@ import { HomeComponent } from './pages/home/home.component';
     NavbarComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    FontAwesomeModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FontAwesomeModule,
+        HttpClientModule,
+        NgOptimizedImage
+    ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptorService, multi: true }
   ],
