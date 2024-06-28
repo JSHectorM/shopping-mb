@@ -20,7 +20,9 @@ div, nav, a, img, form, button, ul, li {
 }
 .navWeb {
   .inp-search {
+    border-radius: 5%;
     max-width: 590px;
+    height: 48px;
   }
 }
 
@@ -33,8 +35,17 @@ div, nav, a, img, form, button, ul, li {
     }
   }
 }
-
 .row-navbar{
-//  Aqui personalizar la segunda row del nav
+  li{
+    a{
+      color: #000000;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .btn-lg{
+    max-height: 48px;
+    font-size: 1rem;
+  }
 }
 

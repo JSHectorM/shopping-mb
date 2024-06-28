@@ -31,6 +31,7 @@ export class NavbarComponent implements OnInit{
 
   // Rutas
   routeHome ="/home"
+  routeLogin ="/login"
 
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
