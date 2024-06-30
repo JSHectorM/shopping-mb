@@ -22,6 +22,9 @@ export class LoginComponent implements OnInit{
   faApple =  faApple;
   faArrowLeft = faArrowLeft;
 
+  // img routes
+  imgWebLogin ='/assets/img/loing-img-1.png'
+
   // flag show pssw
   showPassw = false;
   formLogin !: FormGroup;
