@@ -13,6 +13,7 @@ import {SpinnerInterceptorService} from "./services/spinner-interceptor.service"
 import { NavbarComponent } from './share/components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import {NgOptimizedImage} from "@angular/common";
+import { CardCategoriaComponent } from './share/components/card-categoria/card-categoria.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {NgOptimizedImage} from "@angular/common";
     PageNotFoundComponent,
     SpinnerComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    CardCategoriaComponent
   ],
     imports: [
         BrowserModule,
