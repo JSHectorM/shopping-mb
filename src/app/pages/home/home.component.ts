@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  // img slide header
+  imgMobileHeader = '/assets/img/banner-mobile-home.PNG'
+
 
 }
